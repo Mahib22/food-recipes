@@ -18,4 +18,5 @@ Auth::routes();
 
 Route::get('/', 'RecipesController@index')->name('home');
 Route::get('/create', 'RecipesController@create')->name('create');
-Route::get('/detail', 'RecipesController@show')->name('detail');
+Route::post('/create/post', 'RecipesController@store')->name('post_recipes');
+Route::get('/{slug}', 'RecipesController@show')->name('detail');

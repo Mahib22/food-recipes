@@ -74,11 +74,9 @@
             @yield('content')
         </main>
 
-        @auth
-            <footer class="bg-light d-flex justify-content-center">
-                <p class="mb-0 py-3 fw-bold">Made by Muhammad Mahib Arib</p>
-            </footer>
-        @endauth
+        <footer class="bg-light d-flex justify-content-center">
+            <p class="mb-0 py-3 fw-bold">Made by Muhammad Mahib Arib</p>
+        </footer>
     </div>
 
     <script src="{{ asset('js/index.js') }}"></script>

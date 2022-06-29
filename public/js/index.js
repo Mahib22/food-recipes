@@ -6,7 +6,7 @@ function addMaterial() {
     addInput.setAttribute('type', 'text');
     addInput.classList.add('form-control', 'bg-white', 'radius-10', 'mb-2');
     addInput.setAttribute('id', 'materials');
-    addInput.setAttribute('name', 'materials');
+    addInput.setAttribute('name', 'materials[]');
 
     inputMaterial.append(addInput);
 };
@@ -16,7 +16,7 @@ function addStep() {
     addInput.setAttribute('type', 'text');
     addInput.classList.add('form-control', 'bg-white', 'radius-10', 'mb-2');
     addInput.setAttribute('id', 'steps');
-    addInput.setAttribute('name', 'steps');
+    addInput.setAttribute('name', 'steps[]');
 
     inputStep.append(addInput);
 };
