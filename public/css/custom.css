@@ -1,0 +1,7 @@
+.cover {
+	object-fit: cover;
+}
+
+.radius-10{
+    border-radius: 10px;
+}
