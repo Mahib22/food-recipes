@@ -20,3 +20,4 @@ Route::get('/', 'RecipesController@index')->name('home');
 Route::get('/create', 'RecipesController@create')->name('create');
 Route::post('/create/post', 'RecipesController@store')->name('post_recipes');
 Route::get('/{slug}', 'RecipesController@show')->name('detail');
+Route::get('/like/{recipe_id}', 'LikeController@toggle')->name('like');

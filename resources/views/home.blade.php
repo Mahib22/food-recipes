@@ -10,7 +10,9 @@
                         <img src="{{ asset('img/recipes/' . $item->img) }}" class="card-img-top cover rounded"
                             alt="{{ $item->title }}" height="250px">
                         <div class="card-body px-0 position-relative">
-                            <p class="card-subtitle text-muted">2 Orang Menyukai ini</p>
+                            <p class="card-subtitle text-muted" id="recipe-{{ $item->id }}">
+                                {{ $item->likes_count }} orang menyukai ini
+                            </p>
                             <a href="{{ route('detail', $item->slug) }}"
                                 class="fs-5 text-primary fw-bold text-decoration-none stretched-link">
                                 {{ $item->title }}
@@ -18,7 +20,10 @@
                             <p class="card-text">{{ $item->description }}</p>
                         </div>
                         <div class="d-flex flex-column">
-                            <button class="btn btn-secondary radius-10">Suka</button>
+                            <button class="btn btn-secondary radius-10" onclick="like({{ $item->id }})"
+                                id="btn-{{ $item->id }}">
+                                {{ $item->isLiked() ? 'Disukai' : 'Suka' }}
+                            </button>
                         </div>
                     </div>
                 </div>

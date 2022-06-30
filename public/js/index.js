@@ -20,3 +20,24 @@ function addStep() {
 
     inputStep.append(addInput);
 };
+
+function like(id) {
+    const el = document.getElementById(`btn-${id}`);
+    let likesCount = document.getElementById(`recipe-${id}`);
+
+    fetch('/like/' + id)
+        .then(res => res.json())
+        .then(data => {
+            let currentCount = 0;
+
+            if (data.status === 'LIKE') {
+                currentCount = parseInt(likesCount.innerHTML) + 1;
+                el.innerText = 'Disukai';
+            } else {
+                currentCount = parseInt(likesCount.innerHTML) - 1;
+                el.innerText = 'Suka';
+            }
+
+            likesCount.innerHTML = `${currentCount} orang menyukai ini`;
+        });
+}

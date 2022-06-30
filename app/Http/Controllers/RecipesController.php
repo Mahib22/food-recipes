@@ -27,7 +27,7 @@ class RecipesController extends Controller
     public function index()
     {
         //
-        $recipes = Recipes::all()->SortByDesc('created_at');
+        $recipes = Recipes::withCount('likes')->orderBy('created_at', 'desc')->get();
         return view('home', compact('recipes'));
     }
 
